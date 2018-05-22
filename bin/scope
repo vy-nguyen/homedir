@@ -1,0 +1,7 @@
+#!/bin/sh
+
+find -L . -name "*.[ch]" -print > cscope.files
+find -L . -name "*.cpp" -print >> cscope.files
+cat cscope.files | grep -v build | xargs ctags --fields=+l
+
+cscope 
